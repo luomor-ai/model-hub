@@ -20,4 +20,9 @@
 
 !paddlex --export_inference --model_dir=/home/aistudio/models/yolov3_darknet53 \
          --save_dir=output/inference_model --fixed_input_shape=[480,480]
+         
+pip install --upgrade paddlehub -i https://pypi.tuna.tsinghua.edu.cn/simple
+!hub convert --model_dir /home/aistudio/output/inference_model/inference_model --module_name helmet_hub
+!hub install helmet_hub_1652166294.6532774/helmet_hub.tar.gz
+!hub serving start -m helmet_hub
 ```
