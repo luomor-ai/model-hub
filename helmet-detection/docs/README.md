@@ -1,5 +1,7 @@
 ```shell
 nvidia-smi
+
+sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:v1.0 bash
 ```
 
 ```
