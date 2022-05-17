@@ -5,6 +5,7 @@
 ```
 Downloading yolov3_darknet53_270e_coco.pdparams from https://paddledet.bj.bcebos.com/models/yolov3_darknet53_270e_coco.pdparams
 https://paddledet.bj.bcebos.com/models/yolov3_darknet53_270e_coco.pdparams
+https://aistudio.baidu.com/aistudio/datasetdetail/50329
 ```
 
 ```shell
