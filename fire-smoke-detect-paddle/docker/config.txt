@@ -1,0 +1,15 @@
+{
+  "modules_info": {
+    "mobilenetv3_small_hub": {
+      "init_args": {
+        "version": "1.0.0"
+      },
+      "predict_args": {
+        "topk": 3,
+        "warmup_iters": 30,
+        "repeats": 5
+      }
+    }
+  },
+  "port": 8866
+}

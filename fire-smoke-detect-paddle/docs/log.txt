@@ -1,0 +1,77 @@
+hub convert --model_dir inference_model/inference_model \
+            --module_name fire-smoke-detect-paddle \
+            --module_version 1.0.0 \
+            --output_dir fire-smoke-detect-paddle-hub
+Traceback (most recent call last):
+  File "/usr/local/bin/hub", line 5, in <module>
+    from paddlehub.commands.utils import execute
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/__init__.py", line 31, in <module>
+    from paddlehub import datasets
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/datasets/__init__.py", line 15, in <module>
+    from paddlehub.datasets.canvas import Canvas
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/datasets/canvas.py", line 23, in <module>
+    from paddlehub.vision.utils import get_img_file
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/vision/utils.py", line 18, in <module>
+    import cv2
+  File "/usr/local/lib/python3.6/site-packages/cv2/__init__.py", line 8, in <module>
+    from .cv2 import *
+ImportError: libGL.so.1: cannot open shared object file: No such file or directory
+
+hub install fire-smoke-detect-paddle-hub/fire-smoke-detect-paddle.tar.gz
+Decompress fire-smoke-detect-paddle-hub/fire-smoke-detect-paddle.tar.gz
+[##################################################] 100.00%
+[2022-05-13 09:21:51,765] [    INFO] - Successfully uninstalled fire-smoke-detect-paddle
+2022-05-13 09:21:52,763-WARNING: type object 'QuantizationTransformPass' has no attribute '_supported_quantizable_op_type'
+2022-05-13 09:21:52,763-WARNING: If you want to use training-aware and post-training quantization, please use Paddle >= 1.8.4 or develop version
+[2022-05-13 09:21:53,282] [    INFO] - Successfully installed fire-smoke-detect-paddle-1.0.0
+
+serving start --modules fire-smoke-detect-paddle
+2022-05-13 09:25:11,554-WARNING: type object 'QuantizationTransformPass' has no attribute '_supported_quantizable_op_type'
+2022-05-13 09:25:11,554-WARNING: If you want to use training-aware and post-training quantization, please use Paddle >= 1.8.4 or develop version
+[2022-05-13 09:25:12,032] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+2022-05-13 09:25:12 [INFO]      Model[PPYOLOv2] loaded.
+---    fused 3 elementwise_add with relu activation
+---    fused 0 elementwise_add with tanh activation
+---    fused 0 elementwise_add with leaky_relu activation
+---    fused 0 elementwise_add with swish activation
+---    fused 0 elementwise_add with hardswish activation
+---    fused 0 elementwise_add with sqrt activation
+---    fused 0 elementwise_add with abs activation
+---    fused 0 elementwise_add with clip activation
+---    fused 0 elementwise_add with gelu activation
+---    fused 0 elementwise_add with relu6 activation
+---    fused 0 elementwise_add with sigmoid activation
+---    fused 0 elementwise_sub with relu activation
+---    fused 0 elementwise_sub with tanh activation
+---    fused 0 elementwise_sub with leaky_relu activation
+---    fused 0 elementwise_sub with swish activation
+---    fused 0 elementwise_sub with hardswish activation
+---    fused 0 elementwise_sub with sqrt activation
+---    fused 0 elementwise_sub with abs activation
+---    fused 0 elementwise_sub with clip activation
+---    fused 0 elementwise_sub with gelu activation
+---    fused 0 elementwise_sub with relu6 activation
+---    fused 0 elementwise_sub with sigmoid activation
+---    fused 0 elementwise_mul with relu activation
+---    fused 0 elementwise_mul with tanh activation
+---    fused 0 elementwise_mul with leaky_relu activation
+---    fused 0 elementwise_mul with swish activation
+---    fused 0 elementwise_mul with hardswish activation
+---    fused 0 elementwise_mul with sqrt activation
+---    fused 0 elementwise_mul with abs activation
+---    fused 3 elementwise_mul with clip activation
+---    fused 0 elementwise_mul with gelu activation
+---    fused 0 elementwise_mul with relu6 activation
+---    fused 0 elementwise_mul with sigmoid activation
+ * Serving Flask app 'paddlehub.serving.app_compat' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.17.0.8:8866/ (Press CTRL+C to quit)
+
+  File "serving_client_demo.py", line 28, in <module>
+    for j in range(r.json()["results"][0]):
+TypeError: 'list' object cannot be interpreted as an integer
