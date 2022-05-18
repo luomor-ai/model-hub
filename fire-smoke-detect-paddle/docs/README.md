@@ -14,6 +14,7 @@ pip install paddlehub -i https://pypi.doubanio.com/simple/
 pip install paddlepaddle -i https://pypi.doubanio.com/simple/
 pip install paddlex -i https://pypi.doubanio.com/simple/
 
+sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:v1.0 bash
 pip show paddlehub
 
 apt-get update && apt-get install libgl1
@@ -45,6 +46,15 @@ sudo docker start fire-smoke-detect-paddle
 sudo docker rm fire-smoke-detect-paddle
 
 sudo docker logs -f fire-smoke-detect-paddle
+
+sudo docker build -t yiluxiangbei/all-paddle-hub:v1.0 .
+sudo docker push yiluxiangbei/all-paddle-hub:v1.0
+
+sudo docker run -it --name all-paddle-hub -p 8866:8866 -d yiluxiangbei/all-paddle-hub:v1.0
+
+sudo docker stop all-paddle-hub
+sudo docker start all-paddle-hub
+sudo docker rm all-paddle-hub
 
 http://49.232.6.131:8866/
 http://49.232.6.131:8866/predict/fire-smoke-detect-paddle
