@@ -1,6 +1,7 @@
 ```shell
 nvidia-smi
 
+cd helmet-detection
 sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:v1.0 bash
 
 sudo docker build -t yiluxiangbei/all-paddle-hub:v1.0 .
