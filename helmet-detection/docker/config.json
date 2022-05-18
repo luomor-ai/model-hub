@@ -3,8 +3,7 @@
         "fire-smoke-detect-paddle": {
             "init_args": {
                 "version": "1.0.0",
-                "use_gpu": false,
-                "enable_mkldnn": false
+                "use_gpu": false
             },
             "predict_args": {
             }
@@ -12,8 +11,7 @@
         "helmet-detection-hub": {
             "init_args": {
                 "version": "1.0.0",
-                "use_gpu": false,
-                "enable_mkldnn": false
+                "use_gpu": false
             },
             "predict_args": {
             }

@@ -10,8 +10,9 @@ RUN hub convert --model_dir inference_model \
             --output_dir helmet-detection-hub
 
 RUN hub install helmet-detection-hub/helmet-detection.tar.gz
-COPY docker/config.json .
+RUN mkdir config
+COPY docker/config.json config
 # hub serving start -c config.json
 # hub serving start --modules fire-smoke-detect-paddle
 # CMD ["tail", "-f", "/dev/null"]
-ENTRYPOINT ["hub", "serving", "start", "-c", "config.json"]
+ENTRYPOINT ["hub", "serving", "start", "-c", "config/config.json"]
