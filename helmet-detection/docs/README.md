@@ -16,6 +16,10 @@ sudo docker stop all-paddle-hub
 sudo docker start all-paddle-hub
 sudo docker rm all-paddle-hub
 
+hub install chinese_ocr_db_crnn_server==1.1.2
+hub run chinese_ocr_db_crnn_server --input_path "/PATH/TO/IMAGE"
+hub serving start -m chinese_ocr_db_crnn_server
+ 
 http://49.232.6.131:8866/
 http://49.232.6.131:8866/predict/fire-smoke-detect-paddle
 http://49.232.6.131:8866/predict/helmet-detection-hub
