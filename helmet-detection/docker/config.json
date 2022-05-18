@@ -8,7 +8,7 @@
             "predict_args": {
             }
         },
-        "helmet-detection-hub": {
+        "helmet-detection": {
             "init_args": {
                 "version": "1.0.0",
                 "use_gpu": false
