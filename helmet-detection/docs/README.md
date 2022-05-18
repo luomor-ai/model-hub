@@ -9,6 +9,8 @@ sudo docker push yiluxiangbei/all-paddle-hub:v1.0
 
 sudo docker run -it --name all-paddle-hub -p 8866:8866 -d yiluxiangbei/all-paddle-hub:v1.0
 
+sudo docker logs -f all-paddle-hub
+
 sudo docker stop all-paddle-hub
 sudo docker start all-paddle-hub
 sudo docker rm all-paddle-hub

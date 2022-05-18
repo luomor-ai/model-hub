@@ -12,4 +12,4 @@ RUN hub convert --model_dir inference_model \
 RUN hub install helmet-detection-hub/helmet-detection.tar.gz
 # hub serving start --modules fire-smoke-detect-paddle
 # CMD ["tail", "-f", "/dev/null"]
-ENTRYPOINT ["hub", "serving", "start", "--modules", "fire-smoke-detect-paddle,helmet-detection-hub"]
+ENTRYPOINT ["hub", "serving", "start", "--modules", "[fire-smoke-detect-paddle,helmet-detection-hub]"]
