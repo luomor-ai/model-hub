@@ -7,7 +7,7 @@ sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:v1.0 bash
 sudo docker build -t yiluxiangbei/all-paddle-hub:v1.0 .
 sudo docker push yiluxiangbei/all-paddle-hub:v1.0
 
-sudo docker run -it --name all-paddle-hub -p 8866:8866 --rm yiluxiangbei/all-paddle-hub:v1.0 bash
+sudo docker run -it --rm yiluxiangbei/all-paddle-hub:v1.0 bash
 hub serving start -c config/config.json --cors True
 
 sudo docker build -t yiluxiangbei/all-paddle-hub:v1.1 .

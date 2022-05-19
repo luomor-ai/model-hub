@@ -16,4 +16,3 @@ COPY docker/config.json config
 # hub serving start --modules fire-smoke-detect-paddle
 # hub serving start -c config/config.json --cors True
 CMD ["tail", "-f", "/dev/null"]
-# ENTRYPOINT ["hub", "serving", "start", "-c", "config/config.json", "--cors", "True"]
