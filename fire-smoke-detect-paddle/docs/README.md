@@ -39,7 +39,10 @@ hub serving start --modules fire-smoke-detect-paddle
 sudo docker build -t yiluxiangbei/fire-smoke-detect-paddle:v1.0 .
 sudo docker push yiluxiangbei/fire-smoke-detect-paddle:v1.0
 
-sudo docker run -it --name fire-smoke-detect-paddle -p 8866:8866 -d yiluxiangbei/fire-smoke-detect-paddle:v1.0
+sudo docker build -t yiluxiangbei/fire-smoke-detect-paddle:v1.1 .
+sudo docker push yiluxiangbei/fire-smoke-detect-paddle:v1.1
+
+sudo docker run -it --name fire-smoke-detect-paddle -p 8866:8866 -d yiluxiangbei/fire-smoke-detect-paddle:v1.1
 
 sudo docker stop fire-smoke-detect-paddle
 sudo docker start fire-smoke-detect-paddle
@@ -50,7 +53,10 @@ sudo docker logs -f fire-smoke-detect-paddle
 sudo docker build -t yiluxiangbei/all-paddle-hub:v1.0 .
 sudo docker push yiluxiangbei/all-paddle-hub:v1.0
 
-sudo docker run -it --name all-paddle-hub -p 8866:8866 -d yiluxiangbei/all-paddle-hub:v1.0
+sudo docker build -t yiluxiangbei/all-paddle-hub:v1.1 .
+sudo docker push yiluxiangbei/all-paddle-hub:v1.1
+
+sudo docker run -it --name all-paddle-hub -p 8866:8866 -d yiluxiangbei/all-paddle-hub:v1.1
 
 sudo docker stop all-paddle-hub
 sudo docker start all-paddle-hub
