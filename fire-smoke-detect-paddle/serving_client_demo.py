@@ -14,6 +14,7 @@ if __name__ == '__main__':
     # 获取图片的base64编码格式
     img1 = cv2_to_base64(cv2.imread("fire_smoke/images/fire_000001.jpg"))
     img2 = cv2_to_base64(cv2.imread("fire_smoke/images/smoke_000001.jpg"))
+    print(img1)
     data = {'images': [img1, img2]}
     # 指定content-type
     headers = {"Content-type": "application/json"}
