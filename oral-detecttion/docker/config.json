@@ -1,0 +1,31 @@
+{
+    "modules_info": {
+        "fire-smoke-detect-paddle": {
+            "init_args": {
+                "version": "1.0.0",
+                "use_gpu": false
+            },
+            "predict_args": {
+            }
+        },
+        "helmet-detection": {
+            "init_args": {
+                "version": "1.0.0",
+                "use_gpu": false
+            },
+            "predict_args": {
+            }
+        },
+        "oral-detection": {
+            "init_args": {
+                "version": "1.0.0",
+                "use_gpu": false
+            },
+            "predict_args": {
+            }
+        }
+    },
+    "port": 8866,
+    "use_multiprocess": false,
+    "workers": 2
+}
