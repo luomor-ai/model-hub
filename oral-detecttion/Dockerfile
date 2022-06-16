@@ -1,4 +1,4 @@
-FROM yiluxiangbei/all-paddle-hub:v1.1
+FROM yiluxiangbei/paddlehub:paddlex1-v1.0
 
 WORKDIR /app
 RUN rm -rf best_model
@@ -14,5 +14,5 @@ COPY docker/config.json config
 # hub serving start -c config.json
 # hub serving start --modules fire-smoke-detect-paddle
 # hub serving start -c config/config.json
-# CMD ["tail", "-f", "/dev/null"]
-ENTRYPOINT ["hub", "serving", "start", "-c", "config/config.json"]
+CMD ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["hub", "serving", "start", "-c", "config/config.json"]

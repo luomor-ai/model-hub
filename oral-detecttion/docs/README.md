@@ -1,25 +1,28 @@
 ```shell
 cd oral-detection
-sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:v1.0 bash
+sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:paddlex1-v1.0 bash
+
+sudo docker build -t yiluxiangbei/paddlehub:paddlex1-v1.0 -f Dockerfile.base .
+sudo docker push yiluxiangbei/paddlehub:paddlex1-v1.0
 
 # 1.0 no ENTRYPOINT
-sudo docker build -t yiluxiangbei/all-paddle-hub:v1.0 .
-sudo docker push yiluxiangbei/all-paddle-hub:v1.0
+sudo docker build -t yiluxiangbei/all-paddle-hub:paddlex1-v1.0 .
+sudo docker push yiluxiangbei/all-paddle-hub:paddlex1-v1.0
 
-sudo docker run -it --rm yiluxiangbei/all-paddle-hub:v1.0 bash
+sudo docker run -it --rm yiluxiangbei/all-paddle-hub:paddlex1-v1.0 bash
 hub serving start -c config/config.json --cors True
 
-sudo docker build -t yiluxiangbei/all-paddle-hub:v1.1 .
-sudo docker push yiluxiangbei/all-paddle-hub:v1.1
+sudo docker build -t yiluxiangbei/all-paddle-hub:paddlex1-v1.1 .
+sudo docker push yiluxiangbei/all-paddle-hub:paddlex1-v1.1
 
-sudo docker run -it --name all-paddle-hub -p 8096:8866 --rm yiluxiangbei/all-paddle-hub:v1.1
-sudo docker run -it --name all-paddle-hub -p 8096:8866 -d yiluxiangbei/all-paddle-hub:v1.1
+sudo docker run -it --name all-paddle-hub1 -p 8097:8866 --rm yiluxiangbei/all-paddle-hub:paddlex1-v1.1
+sudo docker run -it --name all-paddle-hub1 -p 8097:8866 -d yiluxiangbei/all-paddle-hub:paddlex1-v1.1
 
-sudo docker logs -f all-paddle-hub
+sudo docker logs -f all-paddle-hub1
 
-sudo docker stop all-paddle-hub
-sudo docker start all-paddle-hub
-sudo docker rm all-paddle-hub
+sudo docker stop all-paddle-hub1
+sudo docker start all-paddle-hub1
+sudo docker rm all-paddle-hub1
 
 hub install chinese_ocr_db_crnn_server==1.1.2
 hub run chinese_ocr_db_crnn_server --input_path "/PATH/TO/IMAGE"
