@@ -197,3 +197,40 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/site-packages/paddlex/cv/models/load_model.py", line 68, in load_model
     format(paddlex.__version__, version))
 Exception: Current version is 2.1.0, a model trained by PaddleX=1.3.10 cannot be load.
+
+!paddlex --split_dataset --format COCO --dataset_dir dataset/train --val_value 0.2
+[06-16 11:22:35 MainThread @logger.py:242] Argv: /opt/conda/envs/python35-paddle120-env/bin/paddlex --split_dataset --format COCO --dataset_dir dataset/train --val_value 0.2
+[06-16 11:22:35 MainThread @utils.py:79] WRN paddlepaddle version: 2.1.2. The dynamic graph version of PARL is under development, not fully tested and supported
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/parl/remote/communication.py:38: DeprecationWarning: 'pyarrow.default_serialization_context' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+  context = pyarrow.default_serialization_context()
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/pyarrow/pandas_compat.py:1027: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  'floating': np.float,
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/matplotlib/__init__.py:107: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import MutableMapping
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/matplotlib/rcsetup.py:20: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Iterable, Mapping
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/matplotlib/colors.py:53: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Sized
+Traceback (most recent call last):
+  File "/opt/conda/envs/python35-paddle120-env/bin/paddlex", line 5, in <module>
+    from paddlex.command import main
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/__init__.py", line 20, in <module>
+    from . import cv
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/__init__.py", line 15, in <module>
+    from . import models
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/models/__init__.py", line 15, in <module>
+    from .segmenter import *
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/models/segmenter.py", line 28, in <module>
+    from .base import BaseModel
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/models/base.py", line 25, in <module>
+    from paddleslim import QAT
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddleslim/__init__.py", line 22, in <module>
+    from paddleslim import dygraph
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddleslim/dygraph/__init__.py", line 2, in <module>
+    from .quant import *
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddleslim/dygraph/quant/__init__.py", line 16, in <module>
+    from . import ptq
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddleslim/dygraph/quant/ptq.py", line 21, in <module>
+    from paddle.fluid.contrib.slim.quantization import AbsmaxQuantizer
+ImportError: cannot import name 'AbsmaxQuantizer' from 'paddle.fluid.contrib.slim.quantization' (/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/contrib/slim/quantization/__init__.py)

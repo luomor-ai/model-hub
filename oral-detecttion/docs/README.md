@@ -31,6 +31,9 @@ python client.py
 ```
 
 ```shell
+pip install paddlex
+pip install paddlepaddle
+
 !unzip data/data94616/口腔图像重要部位实例分割精度提升方案.zip
 !mv 口腔图像重要部位实例分割精度提升方案 dataset
 !unzip dataset/train.zip -d dataset
