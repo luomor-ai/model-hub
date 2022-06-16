@@ -1,0 +1,199 @@
+2022-06-16 03:09:25,795-WARNING: type object 'QuantizationTransformPass' has no attribute '_supported_quantizable_op_type'
+2022-06-16 03:09:25,795-WARNING: If you want to use training-aware and post-training quantization, please use Paddle >= 1.8.4 or develop version
+[2022-06-16 03:09:26,286] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+2022-06-16 03:09:26 [INFO]      Model[PPYOLOv2] loaded.
+---    fused 3 elementwise_add with relu activation
+---    fused 0 elementwise_add with tanh activation
+---    fused 0 elementwise_add with leaky_relu activation
+---    fused 0 elementwise_add with swish activation
+---    fused 0 elementwise_add with hardswish activation
+---    fused 0 elementwise_add with sqrt activation
+---    fused 0 elementwise_add with abs activation
+---    fused 0 elementwise_add with clip activation
+---    fused 0 elementwise_add with gelu activation
+---    fused 0 elementwise_add with relu6 activation
+---    fused 0 elementwise_add with sigmoid activation
+---    fused 0 elementwise_sub with relu activation
+---    fused 0 elementwise_sub with tanh activation
+---    fused 0 elementwise_sub with leaky_relu activation
+---    fused 0 elementwise_sub with swish activation
+---    fused 0 elementwise_sub with hardswish activation
+---    fused 0 elementwise_sub with sqrt activation
+---    fused 0 elementwise_sub with abs activation
+---    fused 0 elementwise_sub with clip activation
+---    fused 0 elementwise_sub with gelu activation
+---    fused 0 elementwise_sub with relu6 activation
+---    fused 0 elementwise_sub with sigmoid activation
+---    fused 0 elementwise_mul with relu activation
+---    fused 0 elementwise_mul with tanh activation
+---    fused 0 elementwise_mul with leaky_relu activation
+---    fused 0 elementwise_mul with swish activation
+---    fused 0 elementwise_mul with hardswish activation
+---    fused 0 elementwise_mul with sqrt activation
+---    fused 0 elementwise_mul with abs activation
+---    fused 3 elementwise_mul with clip activation
+---    fused 0 elementwise_mul with gelu activation
+---    fused 0 elementwise_mul with relu6 activation
+---    fused 0 elementwise_mul with sigmoid activation
+[2022-06-16 03:09:27,851] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+2022-06-16 03:09:27 [INFO]      Model[YOLOv3] loaded.
+---    fused 0 elementwise_add with relu activation
+---    fused 0 elementwise_add with tanh activation
+---    fused 0 elementwise_add with leaky_relu activation
+---    fused 0 elementwise_add with swish activation
+---    fused 0 elementwise_add with hardswish activation
+---    fused 0 elementwise_add with sqrt activation
+---    fused 0 elementwise_add with abs activation
+---    fused 0 elementwise_add with clip activation
+---    fused 0 elementwise_add with gelu activation
+---    fused 0 elementwise_add with relu6 activation
+---    fused 0 elementwise_add with sigmoid activation
+---    fused 0 elementwise_sub with relu activation
+---    fused 0 elementwise_sub with tanh activation
+---    fused 0 elementwise_sub with leaky_relu activation
+---    fused 0 elementwise_sub with swish activation
+---    fused 0 elementwise_sub with hardswish activation
+---    fused 0 elementwise_sub with sqrt activation
+---    fused 0 elementwise_sub with abs activation
+---    fused 0 elementwise_sub with clip activation
+---    fused 0 elementwise_sub with gelu activation
+---    fused 0 elementwise_sub with relu6 activation
+---    fused 0 elementwise_sub with sigmoid activation
+---    fused 0 elementwise_mul with relu activation
+---    fused 0 elementwise_mul with tanh activation
+---    fused 0 elementwise_mul with leaky_relu activation
+---    fused 0 elementwise_mul with swish activation
+---    fused 0 elementwise_mul with hardswish activation
+---    fused 0 elementwise_mul with sqrt activation
+---    fused 0 elementwise_mul with abs activation
+---    fused 0 elementwise_mul with clip activation
+---    fused 0 elementwise_mul with gelu activation
+---    fused 0 elementwise_mul with relu6 activation
+---    fused 0 elementwise_mul with sigmoid activation
+[2022-06-16 03:09:28,465] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+Traceback (most recent call last):
+  File "/usr/local/bin/hub", line 8, in <module>
+    sys.exit(execute())
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/utils.py", line 78, in execute
+    status = 0 if com['_entry']().execute(sys.argv[idx:]) else 1
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 352, in execute
+    self.start_serving()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 245, in start_serving
+    self.start_single_app_with_args()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 221, in start_single_app_with_args
+    self.preinstall_modules()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 152, in preinstall_modules
+    m = hub.Module(**init_args)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/module/module.py", line 395, in __new__
+    **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/module/module.py", line 504, in init_with_name
+    user_module._initialize(**kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/compat/paddle_utils.py", line 220, in runner
+    return func(*args, **kwargs)
+  File "/root/.paddlehub/modules/oral_detection/module.py", line 60, in _initialize
+    **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlex/deploy.py", line 52, in __init__
+    self._model = load_model(model_dir, with_net=False)
+  File "/usr/local/lib/python3.6/site-packages/paddlex/cv/models/load_model.py", line 68, in load_model
+    format(paddlex.__version__, version))
+Exception: Current version is 2.1.0, a model trained by PaddleX=1.3.10 cannot be load.
+[zhangchunsheng@h1 oral-detecttion]$ sudo docker logs -f all-paddle-hub
+2022-06-16 03:09:25,795-WARNING: type object 'QuantizationTransformPass' has no attribute '_supported_quantizable_op_type'
+2022-06-16 03:09:25,795-WARNING: If you want to use training-aware and post-training quantization, please use Paddle >= 1.8.4 or develop version
+[2022-06-16 03:09:26,286] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+2022-06-16 03:09:26 [INFO]      Model[PPYOLOv2] loaded.
+---    fused 3 elementwise_add with relu activation
+---    fused 0 elementwise_add with tanh activation
+---    fused 0 elementwise_add with leaky_relu activation
+---    fused 0 elementwise_add with swish activation
+---    fused 0 elementwise_add with hardswish activation
+---    fused 0 elementwise_add with sqrt activation
+---    fused 0 elementwise_add with abs activation
+---    fused 0 elementwise_add with clip activation
+---    fused 0 elementwise_add with gelu activation
+---    fused 0 elementwise_add with relu6 activation
+---    fused 0 elementwise_add with sigmoid activation
+---    fused 0 elementwise_sub with relu activation
+---    fused 0 elementwise_sub with tanh activation
+---    fused 0 elementwise_sub with leaky_relu activation
+---    fused 0 elementwise_sub with swish activation
+---    fused 0 elementwise_sub with hardswish activation
+---    fused 0 elementwise_sub with sqrt activation
+---    fused 0 elementwise_sub with abs activation
+---    fused 0 elementwise_sub with clip activation
+---    fused 0 elementwise_sub with gelu activation
+---    fused 0 elementwise_sub with relu6 activation
+---    fused 0 elementwise_sub with sigmoid activation
+---    fused 0 elementwise_mul with relu activation
+---    fused 0 elementwise_mul with tanh activation
+---    fused 0 elementwise_mul with leaky_relu activation
+---    fused 0 elementwise_mul with swish activation
+---    fused 0 elementwise_mul with hardswish activation
+---    fused 0 elementwise_mul with sqrt activation
+---    fused 0 elementwise_mul with abs activation
+---    fused 3 elementwise_mul with clip activation
+---    fused 0 elementwise_mul with gelu activation
+---    fused 0 elementwise_mul with relu6 activation
+---    fused 0 elementwise_mul with sigmoid activation
+[2022-06-16 03:09:27,851] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+2022-06-16 03:09:27 [INFO]      Model[YOLOv3] loaded.
+---    fused 0 elementwise_add with relu activation
+---    fused 0 elementwise_add with tanh activation
+---    fused 0 elementwise_add with leaky_relu activation
+---    fused 0 elementwise_add with swish activation
+---    fused 0 elementwise_add with hardswish activation
+---    fused 0 elementwise_add with sqrt activation
+---    fused 0 elementwise_add with abs activation
+---    fused 0 elementwise_add with clip activation
+---    fused 0 elementwise_add with gelu activation
+---    fused 0 elementwise_add with relu6 activation
+---    fused 0 elementwise_add with sigmoid activation
+---    fused 0 elementwise_sub with relu activation
+---    fused 0 elementwise_sub with tanh activation
+---    fused 0 elementwise_sub with leaky_relu activation
+---    fused 0 elementwise_sub with swish activation
+---    fused 0 elementwise_sub with hardswish activation
+---    fused 0 elementwise_sub with sqrt activation
+---    fused 0 elementwise_sub with abs activation
+---    fused 0 elementwise_sub with clip activation
+---    fused 0 elementwise_sub with gelu activation
+---    fused 0 elementwise_sub with relu6 activation
+---    fused 0 elementwise_sub with sigmoid activation
+---    fused 0 elementwise_mul with relu activation
+---    fused 0 elementwise_mul with tanh activation
+---    fused 0 elementwise_mul with leaky_relu activation
+---    fused 0 elementwise_mul with swish activation
+---    fused 0 elementwise_mul with hardswish activation
+---    fused 0 elementwise_mul with sqrt activation
+---    fused 0 elementwise_mul with abs activation
+---    fused 0 elementwise_mul with clip activation
+---    fused 0 elementwise_mul with gelu activation
+---    fused 0 elementwise_mul with relu6 activation
+---    fused 0 elementwise_mul with sigmoid activation
+[2022-06-16 03:09:28,465] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+Traceback (most recent call last):
+  File "/usr/local/bin/hub", line 8, in <module>
+    sys.exit(execute())
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/utils.py", line 78, in execute
+    status = 0 if com['_entry']().execute(sys.argv[idx:]) else 1
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 352, in execute
+    self.start_serving()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 245, in start_serving
+    self.start_single_app_with_args()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 221, in start_single_app_with_args
+    self.preinstall_modules()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 152, in preinstall_modules
+    m = hub.Module(**init_args)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/module/module.py", line 395, in __new__
+    **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/module/module.py", line 504, in init_with_name
+    user_module._initialize(**kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/compat/paddle_utils.py", line 220, in runner
+    return func(*args, **kwargs)
+  File "/root/.paddlehub/modules/oral_detection/module.py", line 60, in _initialize
+    **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlex/deploy.py", line 52, in __init__
+    self._model = load_model(model_dir, with_net=False)
+  File "/usr/local/lib/python3.6/site-packages/paddlex/cv/models/load_model.py", line 68, in load_model
+    format(paddlex.__version__, version))
+Exception: Current version is 2.1.0, a model trained by PaddleX=1.3.10 cannot be load.
