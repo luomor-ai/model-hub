@@ -369,3 +369,30 @@ AssertionError: target size (32, 32) cannot be less than image size (224, 395)
     744                 else:
 SystemError: (Fatal) Blocking queue is killed because the data reader raises an exception.
   [Hint: Expected killed_ != true, but received killed_:1 == true:1.] (at /paddle/paddle/fluid/operators/reader/blocking_queue.h:166)
+
+hub serving start -m oral-detection
+[2022-06-16 05:53:59,280] [ WARNING] - The _initialize method in HubModule will soon be deprecated, you can use the __init__() to handle the initialization of the object
+Traceback (most recent call last):
+  File "/usr/local/bin/hub", line 8, in <module>
+    sys.exit(execute())
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/utils.py", line 78, in execute
+    status = 0 if com['_entry']().execute(sys.argv[idx:]) else 1
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 352, in execute
+    self.start_serving()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 245, in start_serving
+    self.start_single_app_with_args()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 221, in start_single_app_with_args
+    self.preinstall_modules()
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/commands/serving.py", line 152, in preinstall_modules
+    m = hub.Module(**init_args)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/module/module.py", line 395, in __new__
+    **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/module/module.py", line 504, in init_with_name
+    user_module._initialize(**kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlehub/compat/paddle_utils.py", line 220, in runner
+    return func(*args, **kwargs)
+  File "/root/.paddlehub/modules/oral_detection/module.py", line 47, in _initialize
+    **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/paddlex/deploy.py", line 63, in __init__
+    raise Exception("[ERROR] Only quantized model or exported "
+Exception: [ERROR] Only quantized model or exported inference model is supported.

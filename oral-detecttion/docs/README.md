@@ -27,7 +27,15 @@ sudo docker rm all-paddle-hub1
 hub install chinese_ocr_db_crnn_server==1.1.2
 hub run chinese_ocr_db_crnn_server --input_path "/PATH/TO/IMAGE"
 hub serving start -m chinese_ocr_db_crnn_server
- 
+
+hub convert --model_dir best_model \
+            --module_name oral-detection \
+            --module_version 1.0.0 \
+            --output_dir oral-detection-hub
+            
+hub install oral-detection-hub/oral-detection.tar.gz
+hub serving start -m oral-detection
+
 sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:v1.0 bash
 cd /app
 python client.py
