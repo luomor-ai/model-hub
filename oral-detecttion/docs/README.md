@@ -45,6 +45,13 @@ hub serving start -m oral-detection
 sudo docker run -ti --volume="$(pwd)":/app --rm yiluxiangbei/paddlehub:v1.0 bash
 cd /app
 python client.py
+
+id	类别	类别说明
+1	mouth	嘴
+2	teeth	牙齿
+3	oropharynx	口咽
+4	uvula	小舌
+5	tongue	舌头
 ```
 
 ```shell

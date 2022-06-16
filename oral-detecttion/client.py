@@ -27,6 +27,9 @@ if __name__ == '__main__':
     for j in range(len(r.json()["results"][0])):
         if (r.json()["results"][0][j]["score"] < 0.09):
             continue
+        # oropharynx
+        if (r.json()["results"][0][j]["category"] != "oropharynx"):
+            continue
         x, y, w, h = r.json()["results"][0][j]["bbox"]
         x, y, w, h = int(x), int(y), int(w), int(h)
         x2, y2 = x + w, y + h
