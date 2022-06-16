@@ -3,7 +3,6 @@ FROM yiluxiangbei/all-paddle-hub:v1.1
 WORKDIR /app
 RUN rm -rf best_model
 COPY best_model best_model
-RUN ls best_model
 
 RUN hub convert --model_dir best_model \
             --module_name oral-detection \
