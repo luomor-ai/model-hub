@@ -1,10 +1,10 @@
 FROM yiluxiangbei/paddlehub:paddlex1-v1.0
 
 WORKDIR /app
-RUN rm -rf best_model
-COPY best_model best_model
+RUN rm -rf inference_model
+COPY inference_model inference_model
 
-RUN hub convert --model_dir best_model \
+RUN hub convert --model_dir inference_model \
             --module_name oral-detection \
             --module_version 1.0.0 \
             --output_dir oral-detection-hub
