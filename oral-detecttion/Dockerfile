@@ -10,7 +10,6 @@ RUN hub convert --model_dir best_model \
             --output_dir oral-detection-hub
 
 RUN hub install oral-detection-hub/oral-detection.tar.gz
-RUN mkdir config
 COPY docker/config.json config
 # hub serving start -c config.json
 # hub serving start --modules fire-smoke-detect-paddle
