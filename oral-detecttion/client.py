@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     img = cv2.imread("oral-data/test/images/00000.jpg")
     for j in range(len(r.json()["results"][0])):
-        if (r.json()["results"][0][j]["score"] < 0.09):
+        if (r.json()["results"][0][j]["score"] < 0.7):
             continue
         # oropharynx
         if (r.json()["results"][0][j]["category"] != "oropharynx"):
