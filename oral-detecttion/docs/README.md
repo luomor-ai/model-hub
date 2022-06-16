@@ -33,6 +33,8 @@ python client.py
 ```shell
 pip install paddlex
 pip install paddlepaddle
+https://github.com/PaddlePaddle/PaddleX/tree/develop/tutorials/train#%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7
+paddlex.det.transforms 2.0
 
 !unzip data/data94616/口腔图像重要部位实例分割精度提升方案.zip
 !mv 口腔图像重要部位实例分割精度提升方案 dataset

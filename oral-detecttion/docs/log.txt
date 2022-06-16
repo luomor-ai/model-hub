@@ -234,3 +234,138 @@ Traceback (most recent call last):
   File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddleslim/dygraph/quant/ptq.py", line 21, in <module>
     from paddle.fluid.contrib.slim.quantization import AbsmaxQuantizer
 ImportError: cannot import name 'AbsmaxQuantizer' from 'paddle.fluid.contrib.slim.quantization' (/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/contrib/slim/quantization/__init__.py)
+
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+
+from paddlex.det import transforms
+import paddlex as pdx
+[06-16 11:30:14 MainThread @utils.py:79] WRN paddlepaddle version: 2.3.0. The dynamic graph version of PARL is under development, not fully tested and supported
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/parl/remote/communication.py:38: DeprecationWarning: 'pyarrow.default_serialization_context' is deprecated as of 2.0.0 and will be removed in a future version. Use pickle or the pyarrow IPC functionality instead.
+  context = pyarrow.default_serialization_context()
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/pyarrow/pandas_compat.py:1027: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  'floating': np.float,
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/matplotlib/__init__.py:107: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import MutableMapping
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/matplotlib/rcsetup.py:20: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Iterable, Mapping
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/matplotlib/colors.py:53: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Sized
+2022-06-16 11:30:15,614-WARNING: type object 'QuantizationTransformPass' has no attribute '_supported_quantizable_op_type'
+2022-06-16 11:30:15,615-WARNING: If you want to use training-aware and post-training quantization, please use Paddle >= 1.8.4 or develop version
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/tensor/creation.py:125: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  if data.dtype == np.object:
+Your script can be run normally only under PaddleX<2.0.0 but the installed PaddleX version is greater than or equal to 2.0.0, the solution is writen in the link https://github.com/PaddlePaddle/PaddleX/tree/develop/tutorials/train#%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7, please refer to this link ro solve this issue.
+An exception has occurred, use %tb to see the full traceback.
+SystemExit: -1
+
+
+model.train(
+    num_epochs=120,
+    train_dataset=train_dataset,
+    train_batch_size=48,
+    eval_dataset=eval_dataset,
+    learning_rate=0.00125,
+    warmup_steps=200,
+    lr_decay_epochs=[20, 50, 80, 110],
+    save_dir='output/mask_rcnn_hrnet_fpn',
+    save_interval_epochs =3,
+    pretrain_weights = "COCO",
+    use_vdl=True)
+2022-06-16 11:55:48 [INFO]	Downloading mask_rcnn_r50_vd_fpn_2x_coco.pdparams from https://paddledet.bj.bcebos.com/models/mask_rcnn_r50_vd_fpn_2x_coco.pdparams
+100%|██████████| 262297/262297 [00:08<00:00, 31184.58KB/s]
+2022-06-16 11:55:57 [INFO]	Loading pretrained model from output/mask_rcnn_hrnet_fpn/pretrain/mask_rcnn_r50_vd_fpn_2x_coco.pdparams
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3a.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3a.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3b.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3b.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3c.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3c.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3d.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res3.res3d.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4a.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4a.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4b.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4b.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4c.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4c.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4d.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4d.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4e.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4e.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4f.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res4.res4f.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res5.res5a.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res5.res5a.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:55:59 [WARNING]	backbone.res5.res5b.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:56:00 [WARNING]	backbone.res5.res5b.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:56:00 [WARNING]	backbone.res5.res5c.branch2b.conv_offset.weight is not in pretrained model
+2022-06-16 11:56:00 [WARNING]	backbone.res5.res5c.branch2b.conv_offset.bias is not in pretrained model
+2022-06-16 11:56:00 [WARNING]	[SKIP] Shape of pretrained params bbox_head.bbox_score.weight doesn't match.(Pretrained: [1024, 81], Actual: [1024, 7])
+2022-06-16 11:56:00 [WARNING]	[SKIP] Shape of pretrained params bbox_head.bbox_score.bias doesn't match.(Pretrained: [81], Actual: [7])
+2022-06-16 11:56:00 [WARNING]	[SKIP] Shape of pretrained params bbox_head.bbox_delta.weight doesn't match.(Pretrained: [1024, 320], Actual: [1024, 24])
+2022-06-16 11:56:00 [WARNING]	[SKIP] Shape of pretrained params bbox_head.bbox_delta.bias doesn't match.(Pretrained: [320], Actual: [24])
+2022-06-16 11:56:00 [WARNING]	[SKIP] Shape of pretrained params mask_head.mask_fcn_logits.weight doesn't match.(Pretrained: [80, 256, 1, 1], Actual: [6, 256, 1, 1])
+2022-06-16 11:56:00 [WARNING]	[SKIP] Shape of pretrained params mask_head.mask_fcn_logits.bias doesn't match.(Pretrained: [80], Actual: [6])
+2022-06-16 11:56:00 [INFO]	There are 311/343 variables loaded into MaskRCNN.
+Exception in thread Thread-8:
+Traceback (most recent call last):
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 530, in _thread_loop
+    batch = self._get_data()
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 667, in _get_data
+    batch.reraise()
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/worker.py", line 169, in reraise
+    raise self.exc_type(msg)
+AssertionError: DataLoader worker(0) caught AssertionError with message:
+Traceback (most recent call last):
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/worker.py", line 329, in _worker_loop
+    batch = fetcher.fetch(indices)
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/fetcher.py", line 121, in fetch
+    data.append(self.dataset[idx])
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/datasets/voc.py", line 324, in __getitem__
+    sample = self.transforms(sample)
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/transforms/operators.py", line 127, in __call__
+    sample = op(sample)
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/transforms/operators.py", line 82, in __call__
+    sample = self.apply(sample)
+  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/transforms/operators.py", line 996, in apply
+    .format(h, w, im_h, im_w)
+AssertionError: target size (32, 32) cannot be less than image size (224, 395)
+
+
+---------------------------------------------------------------------------SystemError                               Traceback (most recent call last)/tmp/ipykernel_104/3940396744.py in <module>
+     12     save_interval_epochs =3,
+     13     pretrain_weights = "COCO",
+---> 14     use_vdl=True)
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/models/detector.py in train(self, num_epochs, train_dataset, train_batch_size, eval_dataset, optimizer, save_interval_epochs, log_interval_steps, save_dir, pretrain_weights, learning_rate, warmup_steps, warmup_start_lr, lr_decay_epochs, lr_decay_gamma, metric, use_ema, early_stop, early_stop_patience, use_vdl, resume_checkpoint)
+   2224                 pretrain_weights, learning_rate, warmup_steps, warmup_start_lr,
+   2225                 lr_decay_epochs, lr_decay_gamma, metric, use_ema, early_stop,
+-> 2226                 early_stop_patience, use_vdl, resume_checkpoint)
+   2227
+   2228     def _compose_batch_transform(self, transforms, mode='train'):
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/models/detector.py in train(self, num_epochs, train_dataset, train_batch_size, eval_dataset, optimizer, save_interval_epochs, log_interval_steps, save_dir, pretrain_weights, learning_rate, warmup_steps, warmup_start_lr, lr_decay_epochs, lr_decay_gamma, metric, use_ema, early_stop, early_stop_patience, use_vdl, resume_checkpoint)
+    332             early_stop=early_stop,
+    333             early_stop_patience=early_stop_patience,
+--> 334             use_vdl=use_vdl)
+    335
+    336     def quant_aware_train(self,
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddlex/cv/models/base.py in train_loop(self, num_epochs, train_dataset, train_batch_size, eval_dataset, save_interval_epochs, log_interval_steps, save_dir, ema, early_stop, early_stop_patience, use_vdl)
+    331             step_time_tic = time.time()
+    332
+--> 333             for step, data in enumerate(self.train_data_loader()):
+    334                 if nranks > 1:
+    335                     outputs = self.run(ddp_net, data, mode='train')
+/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py in __next__(self)
+    740             else:
+    741                 if _in_legacy_dygraph():
+--> 742                     data = self._reader.read_next_var_list()
+    743                     data = _restore_batch(data, self._structure_infos.pop(0))
+    744                 else:
+SystemError: (Fatal) Blocking queue is killed because the data reader raises an exception.
+  [Hint: Expected killed_ != true, but received killed_:1 == true:1.] (at /paddle/paddle/fluid/operators/reader/blocking_queue.h:166)
