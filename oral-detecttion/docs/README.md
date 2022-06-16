@@ -28,7 +28,13 @@ hub install chinese_ocr_db_crnn_server==1.1.2
 hub run chinese_ocr_db_crnn_server --input_path "/PATH/TO/IMAGE"
 hub serving start -m chinese_ocr_db_crnn_server
 
+
 hub convert --model_dir best_model \
+            --module_name oral-detection \
+            --module_version 1.0.0 \
+            --output_dir oral-detection-hub
+            
+hub convert --model_dir inference_model \
             --module_name oral-detection \
             --module_version 1.0.0 \
             --output_dir oral-detection-hub
@@ -135,6 +141,10 @@ png_img  # 展示真实图片
 # 预测结果保存在predict/visualize_00000.jpg
 png_img = Image.open('predict/visualize_00000.jpg')
 png_img  # 展示真实图片
+
+
+!paddlex --export_inference --model_dir=/home/aistudio/output/mask_rcnn_hrnet_fpn/best_model \
+         --save_dir=output/inference_model --fixed_input_shape=[480,480]
 
 
 import os
